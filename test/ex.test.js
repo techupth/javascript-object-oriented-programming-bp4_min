@@ -4,27 +4,52 @@ describe("OOP tests cases", () => {
   test("exercise 1: Method send should be function", async () => {
     const data = await fs.readFile("./ex-1.js");
     const code = `${data} 
-    const smsNotification = new SMSNotification(
+    const smsNotificationTest = new SMSNotification(
       "001",
       new Date(),
       "This is sms noti message",
       "0923232332"
     );
     
-    const emailNotification = new EmailNotification(
+    const emailNotificationTest = new EmailNotification(
       "001",
       new Date(),
       "This is email noti message.",
       "knot@gmail.com"
     ); 
     
-    return {smsNotification, emailNotification}`;
+    return { smsNotificationTest, emailNotificationTest }`;
 
     const func = new Function(code);
-    const { smsNotification, emailNotification } = func();
+    const { smsNotificationTest, emailNotificationTest } = func();
 
-    expect(typeof smsNotification.send && typeof emailNotification.send).toBe(
-      "function"
+    expect(typeof smsNotificationTest.send).toBe("function");
+    expect(typeof emailNotificationTest.send).toBe("function");
+  });
+
+  test("exercise 2: Method send should be function", async () => {
+    const data = await fs.readFile("./ex-2.js");
+    const code = `${data} 
+    const smsNotificationTest = new SMSNotification(
+      "001",
+      new Date(),
+      "This is sms noti message",
+      "0923232332"
     );
+    
+    const emailNotificationTest = new EmailNotification(
+      "001",
+      new Date(),
+      "This is email noti message.",
+      "knot@gmail.com"
+    ); 
+    
+    return { smsNotificationTest, emailNotificationTest }`;
+
+    const func = new Function(code);
+    const { smsNotificationTest, emailNotificationTest } = func();
+
+    expect(typeof smsNotificationTest.send).toBe("function");
+    expect(typeof emailNotificationTest.send).toBe("function");
   });
 });
