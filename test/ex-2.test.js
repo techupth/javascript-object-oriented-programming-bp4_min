@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import { jest } from "@jest/globals";
-describe("exercise 1: OOP tests cases", () => {
+describe("exercise 2: OOP tests cases", () => {
   beforeAll(() => {
     jest.spyOn(console, "log");
   });
@@ -8,7 +8,7 @@ describe("exercise 1: OOP tests cases", () => {
     jest.resetAllMocks();
   });
   test("เมื่อ Execute ตัว Method send จาก EmailNotification Object และ SMSNotification Object จะแสดงผลลัพธ์ตามที่โจทย์กำหนด", async () => {
-    const data = await fs.readFile("./ex-1.js");
+    const data = await fs.readFile("./ex-2.js");
     const code = `${data} 
     const smsNotificationTest = new SMSNotification(
       "001",
